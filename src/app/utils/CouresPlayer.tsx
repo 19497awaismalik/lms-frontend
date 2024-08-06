@@ -15,7 +15,7 @@ const CouresPlayer:FC<Props> = (props) => {
         playbackInfo:""
     })
     useEffect(()=>{
-    axios.post(`http://localhost:8000/api/v1/getVdoCipherOTP`,{
+    axios.post(`https://lms-backend-ochre-chi.vercel.app/api/v1/getVdoCipherOTP`,{
         videoId:videoUrl
     }).then((response)=>{
         setvideoData(response.data)

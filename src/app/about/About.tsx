@@ -41,7 +41,7 @@ const About:FC = () => {
                 to helping new programming,achive their goals and reach their full potential.
             </p>
             <br />
-            <span className=' font-Poppins text-[22px]'>Muhammad Arslan</span>
+            <span className=' font-Poppins text-[22px]'>Awais Malik</span>
             <h1 className=' text-[18px] font-Poppins'>
                 Founder and CEO of ELearning
             </h1>

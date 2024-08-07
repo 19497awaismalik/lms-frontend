@@ -28,14 +28,15 @@ if(search===""){
       {isLoading ? (
         <Loader/>
       ):(
-            <div className=' w-full 1000px:flex items-center justify-between 800px:pb-[100px] 
+               <div className=' w-full 1000px:flex items-center justify-between 800px:pb-[100px] 
             !pb-[50px] 800px:pl-[20px]'>
-              <div className=' !mt-[50px] 800px:left-[20px]  1500px:h-[600px] 1500px:w-[600px] 1100px:h-[480px] 1100px:w-[480px] h-[60vh] min-h-[50vh]  min-w-[350px] w-full  min-w-[300px]: hero_animation rounded-full '>
+              <div className=' !mt-[50px] 800px:left-[20px]  1500px:h-[600px] 1500px:w-[600px] 1100px:h-[480px] 1100px:w-[480px]   min-w-[350px] w-full  
+               hero_animation rounded-full   '>
                 <div className='flex 1000px:min-h-[90vh] h-[50vh]  items-center justify-end z-10'>
                   <img src={data?.layout?.banner?.image?.url}
                      
                   alt='banner'
-                  className=' object-cover 1100px:max-w-[90%] 1500px:w-[85%]  md:pt-0 pt-[70px]  w-[90%] mx-auto z-10'
+                  className=' object-cover 1100px:max-w-[90%] 1500px:w-[85%]  md:pt-0   w-[100%] mx-auto z-10'
                   />
                   </div>
                 </div>
@@ -49,7 +50,7 @@ if(search===""){
      className=' dark:text-[#edfff4] text-[#00000c]  font-Josefin font-[600]  text-[18px]  1100px:w-[85%] w-full bg-transparent  800px:pt-5'>{data?.layout?.banner?.subTitle}</h1>
      <>
 
-     <div className=" relative 1100px:w-[80%] w-[90%] h-[50px] bg-transparent  top-[20px]  ">
+     <div className=" relative 1100px:w-[80%] w-[100%] h-[50px] bg-transparent  top-[20px]  ">
        <input type="search" placeholder='Search Courses...'
        className=' bg-transparent border dark:border-none dark:bg-[#575757] dark:placeholder:text-[#ffffffdd] rounded-[5px] font-Poppins p-2 w-full h-full outline-none  dark:text-white text-black' 
        value={search}

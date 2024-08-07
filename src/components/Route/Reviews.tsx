@@ -13,14 +13,14 @@ import { styles } from '../../app/styles/styles'
 import  ReviewCard from '../Review/ReviewCard'
 export const reviews=[
     {
-    name:"Muhammad Arslan",
+    name:"Awais Malik",
     avatar:coder,
     ratings:3,
-    professtion:"FUll stack Web Developer | Paskitan",
+    professtion:"Full Stack Web Developer | Paskitan",
     comments:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit dolorem tempora, quas, pariatur ducimus provident, consequatur magnam quod vitae nihil sapiente possimus. Amet, culpa similique! Ut sequi quaerat neque omnis veniam? Eligendi quia voluptates sint alias fuga perspiciatis expedita facere esse repellat! Nulla, numquam labore quam debitis molestiae quo. Necessitatibus corporis eos id molestiae nemo maxime exercitationem sint iste modi distinctio, harum maiores fugit assumenda est! Odit ducimus dicta dolorum accusamus."
 }, 
 {
-    name:"Awais Malik",
+    name:"Muhammad Aralsan",
     avatar:men2,
     ratings:2,
     professtion:"Junior Web Developer | Pakistan",

@@ -44,7 +44,7 @@ const Login: FC<Props> = ({ setroute, setOpen }) => {
 
         }
         if (error) {
-            toast.error((error as any)?.data.messagse);
+            toast.error((error as any)?.data.message);
 
         }
 

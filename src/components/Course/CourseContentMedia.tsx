@@ -2,7 +2,7 @@
 import { styles } from '../../app/styles/styles'
 import CouresPlayer from '../../app/utils/CouresPlayer'
 import Image from 'next/image'
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState,useRef } from 'react'
 import { AiFillStar, AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineStar } from 'react-icons/ai'
 import avatar from '../../../public/banner.webp'
 import toast from 'react-hot-toast'
@@ -108,8 +108,10 @@ const handleQustion=async()=>{
 
     }
   }
+  const effectExecuted = useRef(false);
+
 useEffect(()=>{
-    if(isSuccess){
+    if( !effectExecuted.current && isSuccess){
         setquestion("");
         refetch();
         console.log('notification');
@@ -119,8 +121,16 @@ useEffect(()=>{
             userId:user._id
           })
         toast.success("Qusetion Added Successfully...");
+        effectExecuted.current = true;
     }
-    if(answerCreationSuccess){
+        if(!effectExecuted.current && answerError){
+        toast.error((answerError as any).data.message);
+    }
+
+
+},[isSuccess,error]);
+useEffect(()=>{
+    if(!effectExecuted.current && answerCreationSuccess){
         setAnswer("");
         refetch();
         toast.success("Answer Added Successfully");
@@ -131,20 +141,19 @@ useEffect(()=>{
                 userId:user._id
               })
         }
+        effectExecuted.current = true;
     }
     
-    if(error){
+    if(!effectExecuted.current && answerError){
         toast.error((error as any).data.message);
 
-    }
-    if(answerError){
-        toast.error((answerError as any).data.message);
+
     }
 
-},[isSuccess,error,answerCreationSuccess,answerError,activeVideo,data,refetch,socketId,user._id,user.role]);
+},[answerCreationSuccess,answerError])
 
 useEffect(()=>{
-    if(reviewCreationSuccess){
+    if(!effectExecuted.current && reviewCreationSuccess){
         setReview("");
         courseRefetch();
         socketId.emit('notification',{
@@ -153,22 +162,30 @@ useEffect(()=>{
             userId:user._id
           })
         toast.success("Review Added Successfully");
+        effectExecuted.current = true;
     }
-    if(reviewError){
+    if(!effectExecuted.current && reviewError){
         toast.error((reviewError as any).data.message);
+        effectExecuted.current = true;
 
     }
-    if(addRepleySuccess){
+   
+
+},[reviewError,reviewCreationSuccess])
+useEffect(()=>{
+    if(!effectExecuted.current && addRepleySuccess){
         setreply("");
         courseRefetch();
         toast.success("Reply added Successfully");
+        effectExecuted.current =true;
     }
-    if(RepleyError){
+    if(!effectExecuted.current && RepleyError){
         toast.error((RepleyError as any).data.message);
+        effectExecuted.current = true;
+
 
     }
-
-},[reviewError,reviewCreationSuccess,addRepleySuccess,RepleyError,activeVideo,data,socketId,user._id,courseRefetch])
+},[addRepleySuccess,RepleyError])
 
   return (
     <div className=' w-[95%] 800px:w-[89%]   py-4 m-auto  '>
